@@ -1,0 +1,53 @@
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Bb]in/
+[Oo]bj/
+build/
+TestResults/
+
+# NuGet
+packages/
+*.nupkg
+.nuget/
+
+# Publish
+publish/
+*.publishsettings
+*.pubxml
+*.deployment
+
+# Rider / JetBrains
+.idea/
+*.DotSettings.user
+
+# VS Code
+.vscode/
+
+# Resharper
+_ReSharper*/
+*ReSharper*/
+
+# IIS Express
+IISExpress/
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+~$*
+
+# Ignore node modules if present
+node_modules/
