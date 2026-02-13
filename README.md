@@ -15,6 +15,8 @@ Quick usage
   - Press the clear hotkey (default `F10`) or click the Clear button to remove markers.
 - Change hotkeys:
   - Click a hotkey button in the UI, then press the desired key. Save settings with the "Save settings" button.
+  
+![0213(1)](https://github.com/user-attachments/assets/ca32f614-dd4d-4a2e-b4d8-6fa21e313dff)
 
 Notes
 - For correct overlay alignment the game must be running in Windowed or Borderless (Windowed Fullscreen) mode. Fullscreen exclusive mode may prevent overlay or input capture from working correctly.
