@@ -26,4 +26,7 @@ Build and release
 - The project targets .NET Framework 4.7.2. Build in Visual Studio using the `Release` configuration.
 - The built executable is typically found at `ORESHNIK\bin\Release\ORESHNIK.exe`.
 
-If you need a more detailed user guide or an English/expanded README, request the additions.
+![.NET](https://img.shields.io/badge/.NET-Framework-blue)
+![WPF](https://img.shields.io/badge/WPF-Desktop-purple)
+![Status](https://img.shields.io/badge/Status-Completed-green)
+
