@@ -1,0 +1,35 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+    <system:String x:Key="Title">PUBG Distance Calculator</system:String>
+    <system:String x:Key="ManualInput">Manual input:</system:String>
+    <system:String x:Key="PxText">px = 100m</system:String>
+    <system:String x:Key="Apply">Apply</system:String>
+    <system:String x:Key="CalibrationNotDone">❌ Calibration not done</system:String>
+    <system:String x:Key="CalibrationDone">✅ Set: {0:F1} px = 100m</system:String>
+    <system:String x:Key="ClearLines">🗑 Clear lines</system:String>
+    <system:String x:Key="Distance">Distance: --- m</system:String>
+    <system:String x:Key="DistanceValue">📏 {0:F1} m</system:String>
+    <system:String x:Key="LinesCleared">Lines cleared. Press {0} for new measurement</system:String>
+    <system:String x:Key="LineClearedNoCalib">Lines cleared. Complete calibration</system:String>
+    <system:String x:Key="Instructions">Enter pixels or use calibration hotkey</system:String>
+    <system:String x:Key="HotkeysTitle">⚙ Hotkeys:</system:String>
+    <system:String x:Key="Measure">Measure:</system:String>
+    <system:String x:Key="Clear">Clear:</system:String>
+    <system:String x:Key="Calibration">Calibration:</system:String>
+    <system:String x:Key="Change">Change</system:String>
+    <system:String x:Key="SaveSettings">💾 Save settings</system:String>
+    <system:String x:Key="Minimize">Minimize</system:String>
+    <system:String x:Key="Close">Close</system:String>
+    <system:String x:Key="Language">EN</system:String>
+    <system:String x:Key="CalibrationPoint1">Press {0} on the first point at 100m distance in game</system:String>
+    <system:String x:Key="CalibrationPoint2">Press {0} on the second point at 100m distance</system:String>
+    <system:String x:Key="CalibrationPointLabel">Calibration: point 2/2</system:String>
+    <system:String x:Key="MeasurementPoint2">Press {0} on the second point for measurement</system:String>
+    <system:String x:Key="MeasurementPointLabel">Measurement: point 2/2</system:String>
+    <system:String x:Key="CalibrationCompleted">Calibration completed! Press {0} to measure</system:String>
+    <system:String x:Key="MeasurementDone">Done! {0} - new measurement, {1} - clear</system:String>
+    <system:String x:Key="CalibrationLoaded">Calibration loaded. Press {0} to measure</system:String>
+
+</ResourceDictionary>

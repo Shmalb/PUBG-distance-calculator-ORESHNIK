@@ -1,0 +1,35 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+    <system:String x:Key="Title">PUBG Distance Calculator</system:String>
+    <system:String x:Key="ManualInput">Ручной ввод:</system:String>
+    <system:String x:Key="PxText">px = 100м</system:String>
+    <system:String x:Key="Apply">Применить</system:String>
+    <system:String x:Key="CalibrationNotDone">❌ Калибровка не выполнена</system:String>
+    <system:String x:Key="CalibrationDone">✅ Выставлено: {0:F1} px = 100м</system:String>
+    <system:String x:Key="ClearLines">🗑 Очистить линии</system:String>
+    <system:String x:Key="Distance">Расстояние: --- м</system:String>
+    <system:String x:Key="DistanceValue">📏 {0:F1} м</system:String>
+    <system:String x:Key="LinesCleared">Линии очищены. Нажмите {0} для нового измерения</system:String>
+    <system:String x:Key="LineClearedNoCalib">Линии очищены. Выполните калибровку</system:String>
+    <system:String x:Key="Instructions">Введите пиксели или используйте горячую клавишу калибровки</system:String>
+    <system:String x:Key="HotkeysTitle">⚙ Горячие клавиши:</system:String>
+    <system:String x:Key="Measure">Измерение:</system:String>
+    <system:String x:Key="Clear">Очистить:</system:String>
+    <system:String x:Key="Calibration">Калибровка:</system:String>
+    <system:String x:Key="Change">Изменить</system:String>
+    <system:String x:Key="SaveSettings">💾 Сохранить настройки</system:String>
+    <system:String x:Key="Minimize">Свернуть</system:String>
+    <system:String x:Key="Close">Закрыть</system:String>
+    <system:String x:Key="Language">RU</system:String>
+    <system:String x:Key="CalibrationPoint1">Нажмите {0} на первой точке расстояния 100м в игре</system:String>
+    <system:String x:Key="CalibrationPoint2">Нажмите {0} на второй точке расстояния 100м</system:String>
+    <system:String x:Key="CalibrationPointLabel">Калибровка: точка 2/2</system:String>
+    <system:String x:Key="MeasurementPoint2">Нажмите {0} на второй точке для измерения</system:String>
+    <system:String x:Key="MeasurementPointLabel">Измерение: точка 2/2</system:String>
+    <system:String x:Key="CalibrationCompleted">Калибровка завершена! Нажмите {0} для измерения</system:String>
+    <system:String x:Key="MeasurementDone">Готово! {0} - новое измерение, {1} - очистить</system:String>
+    <system:String x:Key="CalibrationLoaded">Калибровка загружена. Нажмите {0} для измерения</system:String>
+
+</ResourceDictionary>
