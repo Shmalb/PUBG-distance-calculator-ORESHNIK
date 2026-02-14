@@ -73,12 +73,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+<<<<<<< HEAD
     <Page Include="Resources\Dictionary.en-US.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Resources\Dictionary.ru-RU.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+=======
+>>>>>>> 1efd22a59c9bcb11ef7fd17096784d8f7e026b6a
   </ItemGroup>
   <ItemGroup>
     <Compile Include="OverlayWindow.cs" />
@@ -113,8 +116,11 @@
   <ItemGroup>
     <Resource Include="Iconka.ico" />
   </ItemGroup>
+<<<<<<< HEAD
   <ItemGroup>
     <Resource Include="pubg-icon.png" />
   </ItemGroup>
+=======
+>>>>>>> 1efd22a59c9bcb11ef7fd17096784d8f7e026b6a
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

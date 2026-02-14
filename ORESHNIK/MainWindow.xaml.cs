@@ -72,12 +72,15 @@ namespace ORESHNIK
         private DispatcherTimer topmostTimer;
         private IntPtr windowHandle;
         private Forms.NotifyIcon trayIcon;
+<<<<<<< HEAD
         private bool isRussian = true;
 
         // Отслеживание состояния текстов
         private enum TextState { Default, CalibrationPoint, MeasurementPoint, Result, Cleared }
         private TextState txtResultState = TextState.Default;
         private TextState txtInstructionState = TextState.Default;
+=======
+>>>>>>> 1efd22a59c9bcb11ef7fd17096784d8f7e026b6a
 
         public MainWindow()
         {
@@ -260,6 +263,11 @@ namespace ORESHNIK
                 SaveSettings();
 
                 txtInstruction.Text = string.Format("Калибровка установлена! Нажмите {0} для измерения расстояний", measureHotkey);
+<<<<<<< HEAD
+=======
+                MessageBox.Show(string.Format("Калибровка применена:\n{0:F1} px = 100 м\n\nНажмите {1} в игре для измерения расстояний", pixelValue, measureHotkey),
+                               "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
+>>>>>>> 1efd22a59c9bcb11ef7fd17096784d8f7e026b6a
             }
             else
             {
@@ -268,6 +276,47 @@ namespace ORESHNIK
             }
         }
 
+<<<<<<< HEAD
+=======
+        private void BtnCalibration_Click(object sender, RoutedEventArgs e)
+        {
+            if (currentMode == Mode.Calibration)
+            {
+                currentMode = Mode.Idle;
+                btnCalibration.Content = "Ручная калибровка";
+                btnCalibration.Background = new SolidColorBrush(Color.FromRgb(0, 120, 215));
+
+                calibrationPoint1 = null;
+                calibrationPoint2 = null;
+
+                if (overlayWindow != null)
+                {
+                    overlayWindow.ClearMarkers();
+                }
+
+                txtInstruction.Text = "Калибровка отменена";
+                txtResult.Text = "Расстояние: --- м";
+            }
+            else
+            {
+                StartCalibration();
+            }
+        }
+
+        private void StartCalibration()
+        {
+            currentMode = Mode.Calibration;
+            btnCalibration.Content = "Отменить калибровку";
+            btnCalibration.Background = new SolidColorBrush(Color.FromRgb(255, 140, 0));
+
+            calibrationPoint1 = null;
+            calibrationPoint2 = null;
+
+            txtInstruction.Text = string.Format("Нажмите {0} на первой точке расстояния 100м в игре", calibrationHotkey);
+            txtResult.Text = "Калибровка: точка 1/2";
+        }
+
+>>>>>>> 1efd22a59c9bcb11ef7fd17096784d8f7e026b6a
         private void BtnClear_Click(object sender, RoutedEventArgs e)
         {
             ClearMarkers();
@@ -285,6 +334,7 @@ namespace ORESHNIK
                 currentMode = Mode.Idle;
             }
 
+<<<<<<< HEAD
             txtResult.ClearValue(TextBlock.TextProperty);
             txtResultState = TextState.Cleared;
 
@@ -298,6 +348,17 @@ namespace ORESHNIK
             {
                 txtInstruction.Text = (string)System.Windows.Application.Current.Resources["LineClearedNoCalib"];
                 txtInstructionState = TextState.Default;
+=======
+            txtResult.Text = "Расстояние: --- м";
+
+            if (calibrationPixelDistance > 0)
+            {
+                txtInstruction.Text = string.Format("Линии очищены. Нажмите {0} для нового измерения", measureHotkey);
+            }
+            else
+            {
+                txtInstruction.Text = "Линии очищены. Выполните калибровку";
+>>>>>>> 1efd22a59c9bcb11ef7fd17096784d8f7e026b6a
             }
 
             if (overlayWindow != null)
@@ -354,11 +415,15 @@ namespace ORESHNIK
             {
                 if (currentMode != Mode.Calibration)
                 {
+<<<<<<< HEAD
                     currentMode = Mode.Calibration;
                     calibrationPoint1 = null;
                     calibrationPoint2 = null;
                     txtInstruction.Text = string.Format("Нажмите {0} на первой точке расстояния 100м в игре", calibrationHotkey);
                     txtResult.Text = "Калибровка: точка 1/2";
+=======
+                    StartCalibration();
+>>>>>>> 1efd22a59c9bcb11ef7fd17096784d8f7e026b6a
                 }
 
                 HandleCalibrationPoint(screenPoint);
@@ -376,12 +441,17 @@ namespace ORESHNIK
             {
                 calibrationPoint1 = point;
                 overlayWindow.AddMarker(point, Brushes.Yellow, "1");
+<<<<<<< HEAD
                 string template = (string)System.Windows.Application.Current.Resources["CalibrationPoint2"];
                 txtInstruction.Text = string.Format(template, calibrationHotkey);
                 txtInstructionState = TextState.CalibrationPoint;
                 string labelTemplate = (string)System.Windows.Application.Current.Resources["CalibrationPointLabel"];
                 txtResult.Text = labelTemplate;
                 txtResultState = TextState.CalibrationPoint;
+=======
+                txtInstruction.Text = string.Format("Нажмите {0} на второй точке расстояния 100м", calibrationHotkey);
+                txtResult.Text = "Калибровка: точка 2/2";
+>>>>>>> 1efd22a59c9bcb11ef7fd17096784d8f7e026b6a
             }
             else if (calibrationPoint2 == null)
             {
@@ -395,6 +465,7 @@ namespace ORESHNIK
                 UpdateCalibrationStatus();
                 SaveSettings();
 
+<<<<<<< HEAD
                 string doneTemplate = (string)System.Windows.Application.Current.Resources["CalibrationDone"];
                 txtResult.Text = string.Format(doneTemplate, calibrationPixelDistance);
                 txtResultState = TextState.Result;
@@ -403,6 +474,14 @@ namespace ORESHNIK
                 txtInstructionState = TextState.Default;
 
                 currentMode = Mode.Idle;
+=======
+                txtResult.Text = string.Format("✅ {0:F0} px = 100м", calibrationPixelDistance);
+                txtInstruction.Text = string.Format("Калибровка завершена! Нажмите {0} для измерения", measureHotkey);
+
+                currentMode = Mode.Idle;
+                btnCalibration.Content = "Ручная калибровка";
+                btnCalibration.Background = new SolidColorBrush(Color.FromRgb(0, 120, 215));
+>>>>>>> 1efd22a59c9bcb11ef7fd17096784d8f7e026b6a
             }
         }
 
@@ -412,12 +491,17 @@ namespace ORESHNIK
             {
                 measurePoint1 = point;
                 overlayWindow.AddMarker(point, Brushes.Lime, "A");
+<<<<<<< HEAD
                 string template = (string)System.Windows.Application.Current.Resources["MeasurementPoint2"];
                 txtInstruction.Text = string.Format(template, measureHotkey);
                 txtInstructionState = TextState.MeasurementPoint;
                 string labelTemplate = (string)System.Windows.Application.Current.Resources["MeasurementPointLabel"];
                 txtResult.Text = labelTemplate;
                 txtResultState = TextState.MeasurementPoint;
+=======
+                txtInstruction.Text = string.Format("Нажмите {0} на второй точке для измерения", measureHotkey);
+                txtResult.Text = "Измерение: точка 2/2";
+>>>>>>> 1efd22a59c9bcb11ef7fd17096784d8f7e026b6a
             }
             else if (measurePoint2 == null)
             {
@@ -429,12 +513,17 @@ namespace ORESHNIK
 
                 overlayWindow.AddLine(measurePoint1.Value, measurePoint2.Value, Brushes.Lime, meters);
 
+<<<<<<< HEAD
                 string valueTemplate = (string)System.Windows.Application.Current.Resources["DistanceValue"];
                 txtResult.Text = string.Format(valueTemplate, meters);
                 txtResultState = TextState.Result;
                 string doneTemplate = (string)System.Windows.Application.Current.Resources["MeasurementDone"];
                 txtInstruction.Text = string.Format(doneTemplate, measureHotkey, clearHotkey);
                 txtInstructionState = TextState.Default;
+=======
+                txtResult.Text = string.Format("📏 {0:F1} м", meters);
+                txtInstruction.Text = string.Format("Готово! {0} - новое измерение, {1} - очистить", measureHotkey, clearHotkey);
+>>>>>>> 1efd22a59c9bcb11ef7fd17096784d8f7e026b6a
 
                 measurePoint1 = null;
                 measurePoint2 = null;
@@ -445,13 +534,21 @@ namespace ORESHNIK
         {
             if (calibrationPixelDistance > 0)
             {
+<<<<<<< HEAD
                 string template = (string)System.Windows.Application.Current.Resources["CalibrationDone"];
                 txtCalibrationStatus.Text = string.Format(template, calibrationPixelDistance);
+=======
+                txtCalibrationStatus.Text = string.Format("✅ Выставлено: {0:F1} px = 100 м", calibrationPixelDistance);
+>>>>>>> 1efd22a59c9bcb11ef7fd17096784d8f7e026b6a
                 txtCalibrationStatus.Foreground = new SolidColorBrush(Color.FromRgb(0, 255, 0));
             }
             else
             {
+<<<<<<< HEAD
                 txtCalibrationStatus.Text = (string)System.Windows.Application.Current.Resources["CalibrationNotDone"];
+=======
+                txtCalibrationStatus.Text = "❌ Калибровка не выполнена";
+>>>>>>> 1efd22a59c9bcb11ef7fd17096784d8f7e026b6a
                 txtCalibrationStatus.Foreground = new SolidColorBrush(Color.FromRgb(255, 68, 68));
             }
         }
@@ -582,6 +679,7 @@ namespace ORESHNIK
                 calibrationPixelDistance = savedCalibration;
                 txtCalibrationPx.Text = string.Format("{0:F1}", savedCalibration);
                 UpdateCalibrationStatus();
+<<<<<<< HEAD
                 string template = (string)System.Windows.Application.Current.Resources["CalibrationLoaded"];
                 txtInstruction.Text = string.Format(template, measureHotkey);
             }
@@ -677,6 +775,14 @@ namespace ORESHNIK
 
             // Обновляем статус калибровки
             UpdateCalibrationStatus();
+=======
+                txtInstruction.Text = string.Format("Калибровка загружена. Нажмите {0} для измерения", measureHotkey);
+            }
+            else
+            {
+                txtInstruction.Text = "Введите пиксели или нажмите 'Ручная калибровка'";
+            }
+>>>>>>> 1efd22a59c9bcb11ef7fd17096784d8f7e026b6a
         }
     }
 }

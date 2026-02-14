@@ -4,10 +4,14 @@
              xmlns:local="clr-namespace:ORESHNIK"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
+<<<<<<< HEAD
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Resources/Dictionary.ru-RU.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
+=======
+         
+>>>>>>> 1efd22a59c9bcb11ef7fd17096784d8f7e026b6a
     </Application.Resources>
 </Application>
